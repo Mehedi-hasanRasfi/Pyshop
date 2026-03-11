@@ -3,11 +3,11 @@ import os
 import datetime
 import sys
 
-# Define the inventory file path for persistence
+
 INVENTORY_FILE = 'pyshop_inventory.json'
 
 class Product:
-    """Represents a single product in the inventory. (OOP Constraint)"""
+    
     def __init__(self, sku, name, price, stock):
         self.sku = sku
         self.name = name
@@ -77,7 +77,7 @@ class Cart:
             return False
 
     def _generate_invoice(self, items, total_cost):
-        """Generates a unique TXT receipt file (File Writing Constraint)."""
+        
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         invoice_id = f"Invoice_ID_{timestamp}"
         file_name = f"{invoice_id}.txt"
@@ -114,7 +114,7 @@ class Cart:
         print("-" * 30)
 
 class InventoryManager:
-    """Manages loading, saving, and accessing the master inventory."""
+   
     def __init__(self, file_path):
         self.file_path = file_path
         self.inventory = {}
@@ -231,7 +231,7 @@ def owner_interface(inv_manager):
 
 
 def main():
-    """Main application loop to select user type."""
+   
     inventory_manager = InventoryManager(INVENTORY_FILE)
     while True:
         print("\n🏠 PyShop Main Menu 🏠")
